@@ -1,0 +1,410 @@
+/* ========================================
+   ESTILOS GENERALES
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #F9E171;
+  color: #333;
+  font-family: 'Gibson', 'Arial', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ========================================
+   LOADER - PANTALLA DE CARGA CON GIF
+   ======================================== */
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFD84D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+.loader img {
+  width: 150px;
+  height: 150px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* ========================================
+   NAVBAR - MENÚ DE NAVEGACIÓN
+   ======================================== */
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.logo img {
+  height: 120px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.menu button {
+  padding: 12px 28px;
+  background-color: #FFA500;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.menu button:hover {
+  background-color: #e69500;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.menu button:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   CARRUSEL - SOLO IMÁGENES
+   ======================================== */
+
+.carrusel {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.slide.activo {
+  opacity: 1;
+}
+
+/* ========================================
+   HERO - SECCIONES DE CONTENIDO
+   ======================================== */
+
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #FFD84D;
+}
+
+.hero-contenido {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-family: 'SK Barbicane', sans-serif;
+  font-size: 48px;
+  color: #FFA500;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero p {
+  text-align: justify;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #000000;
+}
+
+.hero p.nota {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Imagen del GIF Dharma */
+.img-ajustada {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 0 auto 20px auto;
+  animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Videos */
+.video-presentacion,
+.video-budismo {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  display: block;
+  margin: 0 auto 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   CONTENIDO PRINCIPAL
+   ======================================== */
+
+.contenido {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #F9E171;
+}
+
+.contenido img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contenido h2 {
+  margin-bottom: 25px;
+  font-size: 1.3rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+footer {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 30px 20px;
+  text-align: center;
+  color: white;
+}
+
+footer p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+footer .redes {
+  margin: 15px 0;
+}
+
+footer .redes a {
+  color: #FFA500;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+footer .redes a:hover {
+  color: #FFD700;
+  text-decoration: underline;
+}
+
+/* ========================================
+   RESPONSIVE - TABLETS (768px o menos)
+   ======================================== */
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 100px;
+  }
+
+  .menu button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .carrusel {
+    height: 350px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .img-ajustada {
+    width: 80px;
+    height: 80px;
+  }
+
+  .video-presentacion,
+  .video-budismo {
+    max-width: 100%;
+  }
+
+ }
+
+  .Video-Navidad,
+  .video-Navidad {
+    max-width: 100%;
+  }
+
+
+  .contenido h2 {
+    font-size: 1.1rem;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - MÓVILES (480px o menos)
+   ======================================== */
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 15px 10px;
+  }
+
+  .logo {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .logo img {
+    height: 80px;
+  }
+
+  .menu {
+    gap: 10px;
+  }
+
+  .menu button {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .carrusel {
+    height: 250px;
+  }
+
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .img-ajustada {
+    width: 70px;
+    height: 70px;
+  }
+
+  .loader img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .contenido {
+    padding: 40px 15px;
+  }
+
+  .contenido h2 {
+    font-size: 1rem;
+  }
+
+  footer {
+    padding: 20px 15px;
+  }
+
+  footer .redes a {
+    margin: 0 8px;
+    font-size: 14px;
+  }
+}
+/* Imagen del mapa */
+.Mapa {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive para tablets */
+@media (max-width: 768px) {
+  .imagen-destacada {
+    max-width: 400px;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+  .imagen-destacada {
+    max-width: 90%;
+  }
+}

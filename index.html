@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bodhivara</title>
+  <link rel="shortcut icon" type="image/x-icon" href="bud.png" />
+  <link rel="stylesheet" href="estilos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=SK+Barbicane&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- LOADER CON GIF DHARMA -->
+  <div id="loader" class="loader">
+    <img src="Dharma.gif" alt="Cargando...">
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="l1.png" alt="Logo principal">
+      <img src="Bu1.png" alt="Logo secundario">
+    </div>
+    <nav class="menu">
+      <button onclick="location.href='index.html'">Inicio</button>
+      <button onclick="location.href='https://www.dharmatic.org/sobre-dharmatic'">Más Información</button>
+    </nav>
+  </header>
+
+  <!-- CARRUSEL DE IMÁGENES (Solo imágenes, sin botones ni texto) -->
+  <section class="carrusel">
+    <div class="slide activo" style="background-image: url('TB.png');"></div>
+    <div class="slide" style="background-image: url('TB.png');"></div>
+    <div class="slide" style="background-image: url('TB.png');"></div>
+  </section>
+
+  <!-- SECCIÓN HERO - VIDEO DE PRESENTACIÓN -->
+  <section class="hero">
+    <div class="hero-contenido">
+      
+      <!-- Video de presentación -->
+      <video class="video-presentacion" autoplay loop muted controls>
+        <source src="presentacion.mp4" type="video/mp4">
+        Tu navegador no soporta videos HTML5.
+      </video>
+
+      <!-- GIF Dharma -->
+      <img src="Dharma.gif" class="img-ajustada" alt="Símbolo Dharma">
+
+      <!-- Texto: ¿Qué es el Budismo? -->
+      <h1>¿Qué es el Budismo?</h1>
+
+      <p>El budismo es una tradición espiritual antigua que nació en la India, alrededor del siglo V A.E.C., a partir de las enseñanzas de Siddhartha Gautama, conocido como Buda. Se presenta como un camino que busca aliviar el sufrimiento y fomentar la sabiduría, la compasión y la paz interior.</p>
+
+      <p>En el corazón de sus enseñanzas están las Cuatro Nobles Verdades: que el sufrimiento existe, que surge del apego y la ignorancia, que es posible liberarse de él, y que hay un camino hacia esa liberación. Este camino, conocido como el Óctuple Sendero, es una guía práctica que combina conducta ética, disciplina mental y una visión profunda de la realidad.</p>
+
+      <p>A lo largo del tiempo, el budismo se ha expandido por Asia y, eventualmente, al resto del mundo, adoptando diferentes formas. Por ejemplo, el budismo Theravāda se encuentra en el sudeste asiático, mientras que el Mahāyāna se ve en China y Japón, y el Vajrayāna está presente en el Tíbet. Sin importar las diferencias, todas las escuelas comparten una meta común: ayudar a las personas a despertar de la confusión y vivir con más claridad y compasión.</p>
+
+      <p>Hoy en día, el budismo atrae a personas de diversas culturas que buscan un equilibrio entre sus vidas cotidianas y su práctica espiritual. Las enseñanzas sobre la impermanencia, la atención plena y la interconexión de todos los seres siguen brindando respuestas valiosas a los desafíos de la vida moderna.</p>
+
+      <p class="nota">*AEC - Antes de la Era Común</p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN HERO - VIDEO DEL BUDISMO -->
+  <section class="hero">
+    <div class="hero-contenido">
+
+<!-- Mapa -->
+
+<img src="Mapa.jpg" alt="¿Que simboliza el Dharmachakra?" class="Mapa">
+      
+      <!-- Video del Budismo -->
+      <video class="video-budismo" autoplay loop muted controls>
+        <source src="budismo.mp4" type="video/mp4">
+        Tu navegador no soporta videos HTML5.
+      </video>
+
+    </div>
+  </section>
+
+<!-- SECCIÓN HERO - NUEVO VIDEO -->
+<section class="hero">
+  <div class="hero-contenido">
+    
+    <!-- Nuevo Video -->
+    <video class="video-Navidad" autoplay loop muted controls>
+      <source src="Navidad.mp4" type="video/mp4">
+      Tu navegador no soporta videos HTML5.
+    </video>
+
+  </div>
+</section>  
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <section class="contenido">
+    <img src="B1.jpg" alt="Trabajo">
+    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus ac risus placerat vehicula</h2>
+    
+    <img src="BT.jpg" alt="Botanas">
+    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus ac risus placerat vehicula...</h2>
+    <h2>Integer laoreet turpis non mauris vestibulum, nec dignissim arcu malesuada...</h2>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Síguenos en redes:</p>
+    <div class="redes">
+      <a href="#" target="_blank">Instagram</a> | 
+      <a href="#" target="_blank">Facebook</a> | 
+      <a href="#" target="_blank">TikTok</a>
+    </div>
+    <p>© 2025 Bodhivara. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // ========================================
+    // LOADER - Mostrar GIF al cargar la página
+    // ========================================
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      // Ocultar el loader después de 2 segundos
+      setTimeout(() => {
+        loader.style.opacity = '0';
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 500);
+      }, 2000);
+    });
+
+    // ========================================
+    // CARRUSEL - Cambio automático de imágenes
+    // ========================================
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('activo', i === index);
+      });
+    }
+
+    // Cambiar slide cada 5 segundos
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }, 5000);
+  </script>
+
+</body>
+</html>
